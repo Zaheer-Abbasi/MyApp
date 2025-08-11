@@ -1,0 +1,304 @@
+/* Base Reset */
+/*style.css*/
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #111;
+  color: #fff;
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Wrapper Layout */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 10px 20px;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00bcd4;
+}
+
+.top-actions button {
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  margin-left: 10px;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.top-actions button:hover {
+  background-color: #0097a7;
+}
+
+/* Main Panel */
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.device-panel {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  overflow-y: auto;
+  background-color: #121212;
+  align-items: flex-start;
+}
+
+/* Device Frame */
+.device-frame {
+  background-color: #000;
+  border: 2px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  height: 450px;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+  transition: box-shadow 0.3s;
+}
+
+.device-frame:hover {
+  box-shadow: 0 0 16px rgba(0, 188, 212, 0.6);
+}
+
+.device-frame.perf-mode {
+  width: 200px;
+  height: 380px;
+  box-shadow: none;
+  border-color: #222;
+}
+
+.device-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  padding: 4px 8px;
+  color: #ccc;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #444;
+}
+
+.device-header .close-btn {
+  background: none;
+  color: #888;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.device-header .close-btn:hover {
+  color: #f44336;
+}
+
+/* Control Buttons */
+.ctrl-bar {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  background-color: #1a1a1a;
+  padding: 4px 6px;
+  border-top: 1px solid #333;
+}
+
+.ctrl-bar button {
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  color: #ccc;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  transition: all 0.2s ease;
+}
+
+.ctrl-bar button:hover {
+  background-color: #444;
+}
+
+.ctrl-bar button.active {
+  background-color: #00c853;
+  color: #111;
+}
+
+.ctrl-bar button.inactive {
+  background-color: #c62828;
+  color: #fff;
+}
+
+.device-webview {
+  flex: 1;
+  border: none;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0,188,212,0.3);
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #00bcd4;
+  margin-bottom: 10px;
+}
+
+#deviceList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.device-option {
+  flex: 1 1 45%;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.device-option:hover {
+  background-color: #00bcd4;
+  color: #111;
+}
+
+/* Performance Mode Styles */
+body.perf-mode .device-frame {
+  width: 200px;
+  height: 360px;
+  box-shadow: none;
+  border: 1px solid #222;
+}
+
+body.perf-mode .device-header,
+body.perf-mode .ctrl-bar {
+  font-size: 0.7rem;
+  padding: 2px 4px;
+}
+
+body.perf-mode .device-webview {
+  filter: grayscale(1);
+  opacity: 0.7;
+}
+
+/* Session Popup */
+#sessionPopup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #00c853;
+  color: #111;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  z-index: 1000;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+/* Proxy Modal Styles */
+.proxy-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.proxy-modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.proxy-modal-content h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.proxy-modal-content input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.proxy-modal-content .modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.proxy-modal-content .modal-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.proxy-modal-content .modal-buttons button:last-child {
+  background: #ccc;
+  color: #333;
+}
