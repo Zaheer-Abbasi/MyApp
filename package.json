@@ -1,0 +1,50 @@
+{
+  "name": "real-youtube-device-simulator",
+  "version": "1.0.0",
+  "description": "RealYouTubeDeviceSimulator by Zaheer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-react": "webpack --mode production",
+    "pack": "electron-builder --dir",
+    "dist": "npm run build-react && electron-builder"
+  },
+  "build": {
+    "appId": "com.zaheer.realyoutubesimulator",
+    "productName": "RealYouTubeDeviceSimulator",
+    "files": [
+      "main.js",
+      "preload.js",
+      "proxyConfig.js",
+      "dist/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "asar": true,
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "electron": "^28.1.0",
+    "electron-builder": "^24.13.3",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.5.2",
+    "react-toastify": "^11.0.5"
+  }
+}
